@@ -2,7 +2,7 @@ from Question import Question
 import sys, time, datetime
 import Methods
 
-#Creates a set amount of questions, currently only addition, then times how long it takes you
+#Creates a set amount of questions, currently has addition and subtraction, then times how long it takes you
 #to answer them all
 
 #get total number of questions
