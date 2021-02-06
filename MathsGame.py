@@ -1,5 +1,5 @@
 from Question import Question
-import sys, time
+import sys, time, datetime
 import Methods
 
 #Creates a set amount of questions, currently only addition, then times how long it takes you
@@ -44,4 +44,11 @@ for i in range(len(allQuestions)):
 
 #Determine time taken and output how many correct answers there were
 timeTaken = endTime - startTime
-print("You got " + str(totalCorrect) + "/" + str(totalQuestions) + " correct in " + str(int(timeTaken)) + " seconds")
+message = "You got " + str(totalCorrect) + "/" + str(totalQuestions) + " correct in " + str(int(timeTaken)) + " seconds"
+print(message)
+
+#Write result to file
+file = open("Results.txt", "a")
+dateTime = str(datetime.datetime.now())[slice(19)]
+file.write(dateTime + " " + message + "\n")
+file.close()
