@@ -22,6 +22,7 @@ class Question:
     def answerQuestion(self, userInput):
         self.userAnswer = userInput
         self.correct = userInput == self.getAnswer()
+        return self.correct
 
     def getResult(self):
         return str(self.left) + self.type + str(self.right) + " = " + str(self.userAnswer) + " is " + str(self.correct)
