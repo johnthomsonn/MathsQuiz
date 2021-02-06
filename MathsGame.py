@@ -17,6 +17,8 @@ for i in range(totalQuestions):
 #Start the timer
 startTime = time.time()
 
+totalCorrect = 0
+
 #Loop through all questions. getting an integer answer from the user
 for i in range(len(allQuestions)):    
     badInput = True
@@ -26,7 +28,8 @@ for i in range(len(allQuestions)):
             badInput = False
         except:
             continue
-    allQuestions[i].answerQuestion(userInput)
+    if allQuestions[i].answerQuestion(userInput):
+        totalCorrect += 1
 
 #End the timer
 endTime = time.time()
@@ -38,11 +41,6 @@ print("You have answered all your questions, here are your resuls, press enter t
 for i in range(len(allQuestions)):
     input(allQuestions[i].getResult())
 
-#Determine how many correct answers there were
-totalCorrect = 0
-for i in range(len(allQuestions)):
-    if allQuestions[i].correct:
-        totalCorrect += 1
 
 #Determine time taken and output how many correct answers there were
 timeTaken = endTime - startTime
