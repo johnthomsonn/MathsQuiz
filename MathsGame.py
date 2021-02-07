@@ -60,7 +60,7 @@ print(message)
 #Write result to file
 if not os.path.exists("Results"):
     os.makedirs("Results")
-file = open("Results/"+name+".txt", "a")
-dateTime = str(datetime.datetime.now())[slice(19)]
-file.write(dateTime + " " + message + "\n")
-file.close()
+
+with open("Results/"+name+".txt", "a") as file:
+    dateTime = str(datetime.datetime.now())[slice(19)]
+    file.write(dateTime + " " + message + "\n")
