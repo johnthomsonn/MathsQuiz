@@ -1,5 +1,5 @@
 #Own ignores
-Results.txt
+/Results/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
