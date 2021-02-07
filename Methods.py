@@ -1,16 +1,27 @@
 import sys
 
-def getTotalQuestions(): 
-    try:
-        questions = int(sys.argv[1])
-        print("You are playing " + str(questions) + " questions.")
-    except ValueError:
-        questions = 10
-        print("Invalid input. Playing for 10 questions.")
-    except:
-        questions = 5
-        print("You are playing 5 quesions.")
-    return questions
+
 
 def getTypes():
     return ["+", "-"]
+
+def getWhosePlaying():
+    return input("Who is playing? ")
+
+def getNumberOfQuestions():
+    badInput = True
+    while badInput:
+        try:
+            numQ = int(input("How many questions do you want? "))
+            return numQ
+        except:
+            continue
+
+def getMaxNumber():
+    badInput = True
+    while badInput:
+        try:
+            num = int(input("What is the maximum number you want for addition and subtraction? "))
+            return num
+        except:
+            continue
