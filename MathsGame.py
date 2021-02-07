@@ -1,18 +1,28 @@
 from Question import Question
-import sys, time, datetime
+import sys, time, datetime, os
 import Methods
 
 #Creates a set amount of questions, currently has addition and subtraction, then times how long it takes you
 #to answer them all
 
-#get total number of questions
-totalQuestions = Methods.getTotalQuestions()
+name = ""
+totalQuestions = 0
+maxNumber = 0
+
+def getStartingInfo():
+    global name, totalQuestions, maxNumber
+    name = Methods.getWhosePlaying()
+    totalQuestions = Methods.getNumberOfQuestions()
+    maxNumber = Methods.getMaxNumber()
+
+getStartingInfo()
+
 #set all questions array
 allQuestions = []
 
 #create all the questions
 for i in range(totalQuestions):
-    allQuestions.append(Question())
+    allQuestions.append(Question(maxNumber=maxNumber))
 
 #Start the timer
 startTime = time.time()
@@ -48,7 +58,9 @@ message = "You got " + str(totalCorrect) + "/" + str(totalQuestions) + " correct
 print(message)
 
 #Write result to file
-file = open("Results.txt", "a")
+if not os.path.exists("Results"):
+    os.makedirs("Results")
+file = open("Results/"+name+".txt", "a")
 dateTime = str(datetime.datetime.now())[slice(19)]
 file.write(dateTime + " " + message + "\n")
 file.close()
