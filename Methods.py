@@ -14,6 +14,8 @@ def getNumberOfQuestions():
         try:
             numQ = int(input("How many questions do you want? "))
             return numQ
+        except KeyboardInterrupt:
+            sys.exit()
         except:
             continue
 
@@ -23,5 +25,7 @@ def getMaxNumber():
         try:
             num = int(input("What is the maximum number you want for addition and subtraction? "))
             return num
+        except KeyboardInterrupt:
+            sys.exit()
         except:
             continue
