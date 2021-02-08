@@ -58,8 +58,8 @@ message = "You got " + str(totalCorrect) + "/" + str(totalQuestions) + " correct
 print(message)
 
 #Write result to file
-if not os.path.exists("Results"):
-    os.makedirs("Results")
+#if not os.path.exists("Results"):
+os.makedirs("Results", exist_ok=True)
 
 with open("Results/"+name+".txt", "a") as file:
     dateTime = str(datetime.datetime.now())[slice(19)]
