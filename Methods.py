@@ -3,7 +3,7 @@ import sys
 
 
 def getTypes():
-    return ["+", "-"]
+    return ["+", "-", "*", "/"]
 
 def getWhosePlaying():
     return input("Who is playing? ")
