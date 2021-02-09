@@ -38,7 +38,7 @@ class Question:
         return str(self.left) + self.type + str(self.right) + " = " + str(self.userAnswer) + " is " + str(self.correct)
 
     def determineType(self):
-        return Methods.getTypes()[random.randint(3,3)]
+        return Methods.getTypes()[random.randint(0,3)]
     
     def createDivisionQuiestion(self):
         self.right = random.randint(1,10)
