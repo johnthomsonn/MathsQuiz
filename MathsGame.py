@@ -36,6 +36,8 @@ for i in range(len(allQuestions)):
         try:
             userInput = int(input(allQuestions[i].__str__() + " "))
             badInput = False
+        except KeyboardInterrupt:
+            sys.exit()
         except:
             continue
     if allQuestions[i].answerQuestion(userInput):
